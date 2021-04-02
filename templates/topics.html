@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Новости</h1>
+<ul>
+    {% for topic in topics %}
+        <li>
+            <a href="{% url 'topic:topic' topic.id %}">{{ topic }}</a>
+        </li>
+    {% empty %}
+    <li>Пока новостей нет :(</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
